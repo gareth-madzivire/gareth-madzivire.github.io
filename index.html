@@ -1,193 +1,1568 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gareth Tendai Madzivire | CV & Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    /* Reset & base styles */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; background-color: #1e1e2f; color: #e0e0e0; line-height: 1.6; }
-    a { color: #00bfff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    section { padding: 60px 20px; max-width: 1000px; margin: auto; }
-    h1, h2, h3 { margin-bottom: 20px; }
-    h1 { font-size: 2.8rem; }
-    h2 { font-size: 2rem; border-bottom: 2px solid #00bfff; display: inline-block; padding-bottom: 5px; margin-bottom: 30px; }
-    h3 { font-size: 1.4rem; color: #00bfff; margin-bottom: 10px; }
-    p, li { font-size: 1rem; margin-bottom: 10px; }
-    ul { list-style: none; padding-left: 0; }
-    li::before { content: '•'; color: #00bfff; display: inline-block; width: 1em; margin-left: -1em; }
-    .container { max-width: 1000px; margin: auto; }
-
-    /* Navbar */
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #151523; position: sticky; top: 0; z-index: 1000; }
-    nav .logo { font-size: 1.5rem; font-weight: 700; color: #00bfff; }
-    nav ul { display: flex; gap: 20px; }
-    nav ul li { list-style: none; }
-
-    /* Hero Section */
-    .hero { text-align: center; padding-top: 100px; padding-bottom: 60px; }
-    .hero p { font-size: 1.2rem; margin: 20px 0; }
-    .hero .cta { background-color: #00bfff; color: #1e1e2f; padding: 10px 20px; border-radius: 5px; font-weight: 500; display: inline-block; margin-top: 20px; }
-
-    /* Sections */
-    .about, .experience, .education, .projects, .skills, .contact { margin-bottom: 60px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    .card { background-color: #252536; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-
-    /* Footer */
-    footer { text-align: center; padding: 20px; background-color: #151523; border-top: 1px solid #333; margin-top: 60px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gareth Tendai Madzivire | Accounting & FinTech Professional</title>
+    <meta name="description" content="Personal portfolio of Gareth Tendai Madzivire - Accounting & FinTech Professional specializing in financial reporting, tax compliance, and automation.">
+    <meta name="keywords" content="Accountant, FinTech, Zimbabwe, Financial Reporting, Tax Compliance, Sage, QuickBooks, Python, Automation">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a192f;
+            --primary-dark: #020c1b;
+            --secondary: #112240;
+            --accent: #64ffda;
+            --accent-dark: #52d3b1;
+            --light: #ccd6f6;
+            --text: #a8b2d1;
+            --text-light: #e6f1ff;
+            --success: #64ffda;
+            --warning: #f59e0b;
+            --radius: 16px;
+            --shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(100, 255, 218, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(100, 255, 218, 0.05) 0%, transparent 20%);
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+        
+        .nav-container.scrolled {
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(2, 12, 27, 0.7);
+            padding: 15px 0;
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            color: var(--primary-dark);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--accent);
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent);
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Header Styles */
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .header-text {
+            flex: 1;
+            z-index: 2;
+        }
+        
+        .header-visual {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+        }
+        
+        .profile-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid rgba(100, 255, 218, 0.1);
+            box-shadow: 0 0 50px rgba(100, 255, 218, 0.2);
+            transition: var(--transition);
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .profile-img:hover {
+            border-color: rgba(100, 255, 218, 0.3);
+            transform: scale(1.03);
+        }
+        
+        .profile-decor {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            animation: rotate 20s linear infinite;
+        }
+        
+        .profile-decor:nth-child(2) {
+            width: 110%;
+            height: 110%;
+            animation-direction: reverse;
+            animation-duration: 25s;
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.2;
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--accent);
+        }
+        
+        .summary {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(100, 255, 218, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover .contact-icon {
+            background: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(100, 255, 218, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            color: var(--accent);
+            font-size: 1.3rem;
+        }
+        
+        .social-icon:hover {
+            background: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+        }
+        
+        /* Floating Action Buttons */
+        .action-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 99;
+        }
+        
+        .action-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--secondary);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(2, 12, 27, 0.7);
+            transition: var(--transition);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--accent), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3);
+            color: var(--primary-dark);
+            background: var(--accent);
+        }
+        
+        .action-btn:hover::before {
+            opacity: 0.2;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 8rem 0;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text);
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+        
+        .card {
+            background: rgba(17, 34, 64, 0.5);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(100, 255, 218, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px -10px rgba(2, 12, 27, 0.8);
+            border-color: rgba(100, 255, 218, 0.2);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 5px rgba(100, 255, 218, 0.2);
+            z-index: 2;
+        }
+        
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            left: 9px;
+            top: 30px;
+            bottom: -30px;
+            width: 2px;
+            background: rgba(100, 255, 218, 0.2);
+        }
+        
+        .timeline-item:last-child:after {
+            display: none;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .timeline-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+        
+        .timeline-subtitle {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-content ul {
+            padding-left: 1.5rem;
+        }
+        
+        .timeline-content li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .timeline-content li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+        
+        .skill-category h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .skill-category h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .skill-badge {
+            background: rgba(100, 255, 218, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .skill-badge:hover {
+            background: var(--accent);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
+        }
+        
+        .software-badge {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: var(--primary-dark);
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .project-card {
+            background: rgba(17, 34, 64, 0.7);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px -12px rgba(2, 12, 27, 0.8);
+            border-color: rgba(100, 255, 218, 0.2);
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.8rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .project-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+        
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tech-badge {
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Education & Certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .cert-card {
+            background: rgba(17, 34, 64, 0.5);
+            border-radius: var(--radius);
+            padding: 2rem;
+            transition: var(--transition);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            background: rgba(17, 34, 64, 0.8);
+        }
+        
+        .cert-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .cert-issuer {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cert-date {
+            color: var(--text);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cert-status {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(100, 255, 218, 0.1);
+            color: var(--accent);
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Time Capsule */
+        .time-capsule {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: rgba(17, 34, 64, 0.5);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            backdrop-filter: blur(10px);
+            margin-top: 3rem;
+        }
+        
+        .capsule-header {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .capsule-date {
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+        
+        .capsule-subtitle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 2rem;
+        }
+        
+        .capsule-content {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Languages */
+        .languages {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .language-item {
+            text-align: center;
+        }
+        
+        .language-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .language-level {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            padding: 5rem 0 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--accent), var(--text-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .footer-text {
+            font-size: 1.2rem;
+            color: var(--text);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+        
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+            color: rgba(200, 200, 200, 0.6);
+        }
+        
+        /* Animations */
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 3rem;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .profile-container {
+                width: 280px;
+                height: 280px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                background: rgba(10, 25, 47, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2.5rem;
+                transition: var(--transition);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.3rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .capsule-date {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.3rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .profile-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .profile-img {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">Gareth T. Madzivire</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Gareth Tendai Madzivire</h1>
-    <p>Accountant | Software Developer | Entrepreneur | Christian</p>
-    <a href="#contact" class="cta">Get in Touch</a>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>I am a Level 4.1 Bachelor of Commerce in Accounting (Honors) student at Midlands State University, Zimbabwe, with hands-on experience in accounting, finance, and IT. I currently work as an accountant at Broodfair Foundation Trust, overseeing operations for Broodfair Junior Academy.</p>
-    <p>Passionate about leveraging technology to streamline accounting processes, I have developed advanced systems such as the Decima Tax App, integrating Zimbabwe tax compliance with modern software solutions. My work embodies professionalism, innovation, and ethical values guided by my Christian faith.</p>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="experience">
-    <h2>Experience</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Accountant – Broodfair Foundation Trust</h3>
-        <p><strong>Dec 2024 – Present | Bulawayo, Zimbabwe</strong></p>
-        <ul>
-          <li>Manage financial records for Broodfair Junior Academy.</li>
-          <li>Prepare consolidated financial statements under IAS/IFRS.</li>
-          <li>Develop tax reporting and compliance solutions.</li>
-          <li>Integrate IT solutions for efficient accounting operations.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Junior Accountant – Resource Base Concrete Products</h3>
-        <p><strong>2 Years | Bulawayo, Zimbabwe</strong></p>
-        <ul>
-          <li>Handled accounts payable/receivable, payroll, and reconciliations.</li>
-          <li>Prepared monthly and annual financial reports.</li>
-          <li>Worked closely with IT systems for accounting automation.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>IT & Accounting – Realgate Properties</h3>
-        <p><strong>2 Years | Bulawayo, Zimbabwe</strong></p>
-        <ul>
-          <li>Oversaw accounting and IT operations for real estate management.</li>
-          <li>Streamlined reporting processes and improved data integrity.</li>
-        </ul>
-      </div>
+    <!-- Navigation -->
+    <div class="nav-container">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">GM</div>
+                    <span>Gareth Madzivire</span>
+                </a>
+                
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <div class="nav-links">
+                    <a href="#summary" class="nav-link">Summary</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#certifications" class="nav-link">Certifications</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- Education Section -->
-  <section id="education" class="education">
-    <h2>Education</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Midlands State University</h3>
-        <p><strong>Bachelor of Commerce (Accounting) Honors – Level 4.1</strong></p>
-        <p>Gweru, Zimbabwe</p>
-      </div>
-      <div class="card">
-        <h3>Certifications</h3>
-        <ul>
-          <li>QuickBooks ProAdvisor</li>
-          <li>Advanced Excel for Accounting</li>
-        </ul>
-      </div>
+    <!-- Header Section -->
+    <header id="home">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text fade-in">
+                    <h1>Gareth Tendai Madzivire</h1>
+                    <div class="tagline">Accounting & FinTech Professional</div>
+                    <p class="summary">Forward-thinking Accounting and FinTech professional with proven experience in non-profit accounting, financial reporting, tax compliance, and financial technology innovation. Skilled in integrating modern technologies into accounting systems, including automation, data intelligence, and AI-assisted compliance.</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span>Bulawayo, Zimbabwe</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <span>+263 711 391 414</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span>gtmadzivire29@gmail.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://wa.me/263711391414" target="_blank" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/garethmadzivire" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:gtmadzivire29@gmail.com" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+263711391414" class="social-icon">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="header-visual">
+                    <div class="profile-container float-animation">
+                        <div class="profile-img">GTM</div>
+                        <div class="profile-decor"></div>
+                        <div class="profile-decor"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Action Buttons -->
+    <div class="action-buttons">
+        <a href="https://wa.me/263711391414" target="_blank" class="action-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+263711391414" class="action-btn">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="mailto:gtmadzivire29@gmail.com" class="action-btn">
+            <i class="fas fa-envelope"></i>
+        </a>
     </div>
-  </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Decima Tax App</h3>
-        <p>Enterprise-grade tax calculator and compliance software for Zimbabwe, integrating PAYE, NSSA, VAT, Corporate Tax, and automated reporting.</p>
-      </div>
-      <div class="card">
-        <h3>MT5 Trading Bots</h3>
-        <p>Developed advanced bots implementing AMD logic, RSI, Moving Averages, Bollinger Bands, and Market Maker strategies to optimize trade decisions.</p>
-      </div>
-      <div class="card">
-        <h3>Web & Desktop Apps</h3>
-        <p>Designed multi-tenant accounting apps with modern UI, offline-first capability, AI-powered assistance, and integration with QuickBooks and other platforms.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Professional Summary -->
+    <section id="summary">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Professional Summary</h2>
+                <p>Forward-thinking Accounting and FinTech professional with expertise in financial systems and compliance</p>
+            </div>
+            
+            <div class="card fade-in">
+                <p>Currently serving as an Accountant at Broodfair Foundation Trust, combining traditional accounting principles with emerging digital finance solutions to enhance efficiency, transparency, and compliance. Dedicated to continuous professional development, with advanced certifications in Accounting Technology (Sage) and Business Intelligence & Data Analytics (CFI).</p>
+                <p>Known for meticulous attention to detail, innovating in financial systems, and developing original digital solutions such as the Decima Tax App and DecimTech Trading Bot. Skilled in Financial Accounting & Reporting (IFRS/IAS), Taxation (ZIMRA, NSSA, NEC), FinTech Systems & Automation, Data Analytics & Visualization, and AI-Driven Decision Support.</p>
+                <p>Proven ability in process automation and financial systems optimization, with a track record of developing tools that enhance operational efficiency by up to 40%.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills">
-    <h2>Skills</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Accounting & Finance</h3>
-        <ul>
-          <li>Financial Reporting (IAS/IFRS)</li>
-          <li>Payroll, Tax, & Compliance</li>
-          <li>Consolidation & Reconciliation</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Software Development</h3>
-        <ul>
-          <li>React, Electron, ASP.NET Core</li>
-          <li>Desktop & Web Apps</li>
-          <li>AI & Automation Integration</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Tools & Platforms</h3>
-        <ul>
-          <li>QuickBooks, Sage 50</li>
-          <li>MT5 Trading Platform</li>
-          <li>GitHub, VS Code</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <!-- Work Experience -->
+    <section id="experience" style="background: rgba(10, 25, 47, 0.6);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Work Experience</h2>
+                <p>Professional journey and achievements</p>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">Dec 2024 – Present</div>
+                <div class="timeline-title">Accountant</div>
+                <div class="timeline-subtitle">Broodfair Foundation Trust, Bulawayo, Zimbabwe</div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Oversee full accounting cycle for the Foundation and subsidiary Broodfair Junior Academy, ensuring IFRS and ZIMRA compliance</li>
+                        <li>Prepare detailed financial statements (SoFP, SoCI, SoCE, and Notes) in a multi-currency, inflationary economy</li>
+                        <li>Implement digital payroll and tax workflows integrating PAYE, NSSA, NEC, VAT, and QPD computations</li>
+                        <li>Designed financial reporting templates improving donor transparency and forecasting accuracy by 25% through automated dashboard reporting</li>
+                        <li>Automated reconciliations and statutory submissions using advanced Excel and Python models</li>
+                        <li>Introduced cloud-based data backup and reporting system, improving audit readiness</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2022 – 2024</div>
+                <div class="timeline-title">Junior Accountant</div>
+                <div class="timeline-subtitle">Resource Base Concrete Products (Pvt) Ltd, Bulawayo, Zimbabwe</div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Managed accounting operations including ledger reconciliations and cost tracking</li>
+                        <li>Assisted in financial statement preparation and audit coordination</li>
+                        <li>Handled supplier accounts, cash flow analysis, and QuickBooks & Sage integration</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2022 – 2024</div>
+                <div class="timeline-title">Accounting & IT Officer</div>
+                <div class="timeline-subtitle">Realgate Properties (Sister Company), Bulawayo, Zimbabwe</div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Supported property accounting, tenant billing, and maintenance cost allocation</li>
+                        <li>Automated rent tracking systems and enhanced reporting accuracy</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item fade-in">
+                <div class="timeline-date">2016 – Present</div>
+                <div class="timeline-title">Volunteer Accountant & IT Support</div>
+                <div class="timeline-subtitle">Catholic Church (Bulawayo Diocese), Bulawayo, Zimbabwe</div>
+                <div class="timeline-content">
+                    <ul>
+                        <li>Prepare budgets, reports, and digital records for parish operations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>If you want to collaborate, hire me, or just connect, you can reach me at:</p>
-    <ul>
-      <li>Email: <a href="mailto:gareth.madzivire@example.com">gareth.madzivire@example.com</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/gareth-madzivire" target="_blank">linkedin.com/in/gareth-madzivire</a></li>
-      <li>GitHub: <a href="https://github.com/garethmadzivire" target="_blank">github.com/garethmadzivire</a></li>
-    </ul>
-  </section>
+    <!-- Technical Skills -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Technical Skills</h2>
+                <p>Professional competencies and expertise</p>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-category fade-in">
+                    <h3>Accounting Software</h3>
+                    <div class="skill-badges">
+                        <div class="skill-badge software-badge">Sage Accounting</div>
+                        <div class="skill-badge software-badge">QuickBooks Pro</div>
+                        <div class="skill-badge software-badge">Pastel Accounting</div>
+                        <div class="skill-badge software-badge">Sage Intelligence</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3>Financial Competencies</h3>
+                    <div class="skill-badges">
+                        <div class="skill-badge">Financial Reporting (IFRS/IAS)</div>
+                        <div class="skill-badge">Taxation (ZIMRA, NSSA, NEC)</div>
+                        <div class="skill-badge">Non-Profit Accounting</div>
+                        <div class="skill-badge">Payroll Management</div>
+                        <div class="skill-badge">Financial Modelling</div>
+                        <div class="skill-badge">Strategic Budgeting</div>
+                        <div class="skill-badge">Cost Control</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3>Data Analysis & Programming</h3>
+                    <div class="skill-badges">
+                        <div class="skill-badge">Excel (Advanced)</div>
+                        <div class="skill-badge">Power BI</div>
+                        <div class="skill-badge">Python (Pandas, Matplotlib)</div>
+                        <div class="skill-badge">SQL</div>
+                        <div class="skill-badge">MQL5</div>
+                        <div class="skill-badge">Financial Analytics</div>
+                        <div class="skill-badge">Data Visualization</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <h3>FinTech & Automation</h3>
+                    <div class="skill-badges">
+                        <div class="skill-badge">FinTech Systems</div>
+                        <div class="skill-badge">Process Automation</div>
+                        <div class="skill-badge">API Integration</div>
+                        <div class="skill-badge">AI-Driven Decision Support</div>
+                        <div class="skill-badge">Business Process Optimization</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Languages -->
+            <div class="fade-in" style="margin-top: 4rem;">
+                <div class="section-header">
+                    <h3 style="font-size: 2rem;">Languages</h3>
+                </div>
+                <div class="languages">
+                    <div class="language-item">
+                        <div class="language-name">English</div>
+                        <div class="language-level">Fluent / Native</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Shona</div>
+                        <div class="language-level">Native / Bilingual</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Ndebele</div>
+                        <div class="language-level">Native / Bilingual</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2026 Gareth Tendai Madzivire | Designed with ❤️ and code
-  </footer>
+    <!-- Projects -->
+    <section id="projects" style="background: rgba(10, 25, 47, 0.6);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Projects & Innovations</h2>
+                <p>Notable initiatives and developments</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <h3 class="project-title">Decima Tax App</h3>
+                    </div>
+                    <div class="project-content">
+                        <p><strong>Founder & Lead Developer</strong> of a professional-grade Zimbabwe Tax Compliance Platform integrating:</p>
+                        <ul>
+                            <li>PAYE, NSSA, NEC, VAT, Corporate Tax, and QPD modules</li>
+                            <li>AI-powered tax recommendations</li>
+                            <li>Offline-first architecture</li>
+                            <li>Smart report generation and email automation</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">PyQt5</span>
+                            <span class="tech-badge">SQLite</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">Tax Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <h3 class="project-title">DecimTech Trading Bot</h3>
+                    </div>
+                    <div class="project-content">
+                        <p><strong>Creator</strong> of an advanced MT5 automated trading system featuring:</p>
+                        <ul>
+                            <li>Accumulation-Manipulation-Distribution (AMD) logic</li>
+                            <li>Price action confirmation</li>
+                            <li>Multi-timeframe analysis</li>
+                            <li>Dynamic risk management</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">MQL5</span>
+                            <span class="tech-badge">MetaTrader 5</span>
+                            <span class="tech-badge">Python Analytics</span>
+                            <span class="tech-badge">Algorithmic Trading</span>
+                            <span class="tech-badge">Risk Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <div class="project-header">
+                        <h3 class="project-title">Financial Automation Suite</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Developed comprehensive automation solutions for financial processes:</p>
+                        <ul>
+                            <li>Automated reconciliations and statutory submissions</li>
+                            <li>Financial reporting templates with 25% improved accuracy</li>
+                            <li>Cloud-based data backup and reporting system</li>
+                            <li>Digital payroll and tax workflows</li>
+                        </ul>
+                        <div class="project-tech">
+                            <span class="tech-badge">Excel Automation</span>
+                            <span class="tech-badge">Python Models</span>
+                            <span class="tech-badge">Cloud Systems</span>
+                            <span class="tech-badge">Dashboard Reporting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Education -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Education</h2>
+                <p>Academic background and qualifications</p>
+            </div>
+            
+            <div class="card fade-in">
+                <div class="timeline-content">
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: var(--text-light); margin-bottom: 1rem;">Midlands State University (MSU)</h3>
+                    <p style="font-size: 1.2rem; color: var(--accent); margin-bottom: 0.5rem;"><strong>Bachelor of Commerce in Accounting (Honours)</strong></p>
+                    <p style="margin-bottom: 1rem; color: var(--text);">Gweru, Zimbabwe | 2019 – Present</p>
+                    <p style="margin-bottom: 1rem;"><strong>Current Status:</strong> Level 4.1 Student | Expected Graduation: 2026</p>
+                    <p><strong>Key Modules:</strong> Financial Reporting, Auditing, Corporate Finance, Taxation, Financial Management, IFRS Applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" style="background: rgba(10, 25, 47, 0.6);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Certifications & Training</h2>
+                <p>Professional credentials and qualifications</p>
+            </div>
+            
+            <div class="cert-grid">
+                <div class="cert-card fade-in">
+                    <div class="cert-title">Sage Accounting Certified Adviser</div>
+                    <div class="cert-issuer">Sage University</div>
+                    <div class="cert-date">Completed June 2025 | Valid through 2026</div>
+                    <span class="cert-status">Completed</span>
+                </div>
+                
+                <div class="cert-card fade-in">
+                    <div class="cert-title">Sage Intelligence Reporting</div>
+                    <div class="cert-issuer">Sage University</div>
+                    <div class="cert-date">Completed June 2025</div>
+                    <span class="cert-status">Completed</span>
+                </div>
+                
+                <div class="cert-card fade-in">
+                    <div class="cert-title">Sage Business Cloud Accounting Debtors Manager</div>
+                    <div class="cert-issuer">Sage University</div>
+                    <div class="cert-date">Completed June 2025</div>
+                    <span class="cert-status">Completed</span>
+                </div>
+                
+                <div class="cert-card fade-in">
+                    <div class="cert-title">QuickBooks ProAdviser</div>
+                    <div class="cert-issuer">Intuit QuickBooks</div>
+                    <div class="cert-date">Certified January 2025</div>
+                    <span class="cert-status">Completed</span>
+                </div>
+                
+                <div class="cert-card fade-in">
+                    <div class="cert-title">FinTech Industry Professional (FTIP®)</div>
+                    <div class="cert-issuer">Corporate Finance Institute (CFI)</div>
+                    <div class="cert-date">In Progress</div>
+                    <span class="cert-status">In Progress</span>
+                </div>
+                
+                <div class="cert-card fade-in">
+                    <div class="cert-title">Business Intelligence & Data Analyst (BIDA®)</div>
+                    <div class="cert-issuer">Corporate Finance Institute (CFI)</div>
+                    <div class="cert-date">In Progress</div>
+                    <span class="cert-status">In Progress</span>
+                </div>
+            </div>
+            
+            <div class="card fade-in" style="margin-top: 2rem;">
+                <div class="timeline-content">
+                    <p><strong>Membership:</strong> Prospective Student Member – Institute of Chartered Tax Accountants of Zimbabwe (ICTAZ)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Time Capsule -->
+    <section id="time-capsule">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Professional Journey</h2>
+                <p>Current focus and future aspirations</p>
+            </div>
+            
+            <div class="time-capsule fade-in">
+                <div class="capsule-header">Current Focus</div>
+                <div class="capsule-date">2025</div>
+                <div class="capsule-subtitle">Integrating Technology with Accounting Excellence</div>
+                <div class="capsule-content">
+                    <p>Currently enhancing financial systems for NGOs while completing BCom Accounting Honours at Midlands State University. Developing advanced automation tools for tax compliance and financial reporting with a focus on creating sustainable financial models for non-profit organizations.</p>
+                    <p>Expanding expertise in international accounting standards and financial technology to drive innovation in Zimbabwe's financial sector. Committed to continuous professional development through certifications in FinTech, Business Intelligence, and Data Analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="background: rgba(10, 25, 47, 0.6);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Get In Touch</h2>
+                <p>Let's discuss how I can contribute to your organization</p>
+            </div>
+            
+            <div class="card fade-in">
+                <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-light);">Contact Information</h3>
+                        
+                        <div class="contact-info" style="flex-direction: column; gap: 1.5rem;">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <span>Bulawayo, Zimbabwe</span>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <span>+263 711 391 414</span>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <span>gtmadzivire29@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <span>decimatech1.co.zw</span>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links" style="margin-top: 2rem;">
+                            <a href="https://wa.me/263711391414" target="_blank" class="social-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/garethmadzivire" target="_blank" class="social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:gtmadzivire29@gmail.com" class="social-icon">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="tel:+263711391414" class="social-icon">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-light);">Send a Message</h3>
+                        
+                        <form id="contactForm" style="display: grid; gap: 1.2rem;">
+                            <div>
+                                <input type="text" id="name" placeholder="Your Name" required style="width: 100%; padding: 1rem; background: rgba(17, 34, 64, 0.3); border: 1px solid rgba(100, 255, 218, 0.1); border-radius: 8px; color: var(--text-light); font-size: 1rem; outline: none; transition: var(--transition);">
+                            </div>
+                            <div>
+                                <input type="email" id="email" placeholder="Your Email" required style="width: 100%; padding: 1rem; background: rgba(17, 34, 64, 0.3); border: 1px solid rgba(100, 255, 218, 0.1); border-radius: 8px; color: var(--text-light); font-size: 1rem; outline: none; transition: var(--transition);">
+                            </div>
+                            <div>
+                                <textarea id="message" placeholder="Your Message" rows="5" required style="width: 100%; padding: 1rem; background: rgba(17, 34, 64, 0.3); border: 1px solid rgba(100, 255, 218, 0.1); border-radius: 8px; color: var(--text-light); font-size: 1rem; outline: none; transition: var(--transition); resize: none;"></textarea>
+                            </div>
+                            <button type="submit" style="background: var(--accent); color: var(--primary-dark); border: none; padding: 1rem 2rem; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: var(--transition);">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">GM</div>
+                <p class="footer-text">Strategic financial management and tax compliance expertise for forward-thinking organizations</p>
+                
+                <div class="social-links" style="justify-content: center; margin-bottom: 2rem;">
+                    <a href="https://wa.me/263711391414" target="_blank" class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/garethmadzivire" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:gtmadzivire29@gmail.com" class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="copyright">
+                    &copy; 2025 Gareth Tendai Madzivire. All Rights Reserved.<br>
+                    <small style="color: rgba(200, 200, 200, 0.4);">References available upon request</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animation for section elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Navigation scroll effect
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('.nav-container');
+                if (window.scrollY > 100) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+            
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    menuToggle.innerHTML = navLinks.classList.contains('active') ? 
+                        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                });
+            }
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        if (menuToggle) {
+                            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    }
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add active class to current section in navigation
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-link');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollY >= (sectionTop - sectionHeight / 3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    const href = item.getAttribute('href');
+                    if (href && href.substring(1) === current) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Simple form validation
+                    if (!name || !email || !message) {
+                        alert('Please fill in all fields.');
+                        return;
+                    }
+                    
+                    // In a real application, you would send this data to a server
+                    // For GitHub Pages, we'll just show a success message
+                    
+                    // Create mailto link as fallback
+                    const mailtoLink = `mailto:gtmadzivire29@gmail.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message)}`;
+                    
+                    // Show success message
+                    alert('Thank you for your message! For direct contact, please email gtmadzivire29@gmail.com or call +263 711 391 414.');
+                    
+                    // Optionally open email client
+                    // window.location.href = mailtoLink;
+                    
+                    // Reset form
+                    contactForm.reset();
+                });
+            }
+            
+            // Initialize - set first nav item as active if at top
+            if (window.scrollY < 100) {
+                const firstNavItem = document.querySelector('.nav-link');
+                if (firstNavItem) {
+                    firstNavItem.classList.add('active');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
